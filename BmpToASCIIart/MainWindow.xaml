@@ -1,0 +1,38 @@
+﻿<Window x:Class="BmpToASCIIart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BmpToASCIIart"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1800">
+    <Grid RenderTransformOrigin="0.793,0.315">
+
+        <TextBlock  x:Name="output"  HorizontalAlignment="Left" Margin="1613,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="21" Width="145"/>
+        <Image x:Name="pic" HorizontalAlignment="Left" Height="92" Margin="1632,24,0,0" VerticalAlignment="Top" Width="126" />
+        <Button x:Name="Button1" Click="Button1_Click" Content="Obraz" HorizontalAlignment="Left" Margin="1664,190,0,0" VerticalAlignment="Top" Width="75"/>
+        <!-- <TextBlock HorizontalAlignment="Left" Margin="10,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="806" Width="1556" x:Name="ascii" FontFamily="Consolas" FontSize="1"/> -->
+
+
+
+
+        <ScrollViewer  HorizontalAlignment="Left" Width="1575" Margin="33,24,0,10" HorizontalScrollBarVisibility="Auto" CanContentScroll="False">
+            <TextBlock x:Name="ascii" FontFamily="Consolas" FontSize="1" />
+
+        </ScrollViewer>
+
+        <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Center" Margin="1682,581,71,261" />
+        <Slider Name="slValue" HorizontalAlignment="Left" Margin="1691,238,0,0" VerticalAlignment="Top" Width="30" Height="320" Orientation="Vertical" Maximum="64" TickFrequency="1" IsSnapToTickEnabled="True" Minimum="1"/>
+        <Button x:Name="ButtonStart" Content="Start" HorizontalAlignment="Left" Margin="1664,765,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="ButtonStart_Click"/>
+        <TextBlock x:Name="asem" HorizontalAlignment="Left" Margin="1682,668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39"/>
+        <RadioButton x:Name="asm" Content="ASM" HorizontalAlignment="Left" Margin="1676,699,0,0" VerticalAlignment="Top"/>
+
+        <RadioButton x:Name="cpp" Content="C++" HorizontalAlignment="Left" Margin="1677,729,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1613,822,0,0" TextWrapping="Wrap" Text="Time [ms]:" VerticalAlignment="Top" Width="81" Height="20" FontSize="16"/>
+        <TextBlock x:Name="time" HorizontalAlignment="Left" Margin="1699,822,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="20" Width="83"  FontSize="16"/>
+
+
+
+
+    </Grid>
+</Window>
